@@ -1,5 +1,9 @@
 version: '3'
 services:
+  baseimg:
+    build:
+      context: .
+      target: base
   generator:
     build:
       context: .
@@ -9,6 +13,8 @@ services:
       OUTPUT_FILE: /data/raw/first.csv
     volumes:
       - ./data:/data:rw
+    depends_on:
+      - baseimg
   cleaner:
     build:
       context: .
@@ -18,4 +24,7 @@ services:
       OUTPUT_FILE: /data/clean/first.csv
     volumes:
       - ./data:/data:rw
+    depends_on:
+      - baseimg
+
 
