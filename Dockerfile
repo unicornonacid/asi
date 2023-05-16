@@ -21,3 +21,11 @@ COPY generator/generator.sh .
 
 CMD ["/app/generator.sh"]
 
+FROM base AS cleaner
+
+COPY cleaner/cleaner.py .
+COPY cleaner/cleaner.sh .
+
+CMD ["/app/cleaner.sh"]
+
+

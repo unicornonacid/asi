@@ -9,4 +9,13 @@ services:
       OUTPUT_FILE: /data/raw/first.csv
     volumes:
       - ./data:/data:rw
+  cleaner:
+    build:
+      context: .
+      target: cleaner
+    environment:
+      FROM_FILE: /data/raw/first.csv
+      OUTPUT_FILE: /data/clean/first.csv
+    volumes:
+      - ./data:/data:rw
 
