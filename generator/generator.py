@@ -82,12 +82,12 @@ for z in range(X):
         #Jeżeli nie oglądała to N wzrasta o 10
         if fruits_dict[x]==0:
             N=N+10
-            #Jeżeli nie oglądała a ideks owocu jest parzysty, to N wzrasta o 5
-            #dla nieparzystych obiża się o 5
+            #Jeżeli nie oglądała a indeks owocu jest parzysty, to N wzrasta o 5
+            #dla nieparzystych obniża się o 5
             if n % 2 == 0:
                 N=N+5
             else:
-                N=N-5 
+                N=N+20 
         else:
             #jeżeli oglądała reklamę owoców, to zmienna Y wzrasta o 10 + ile sekund oglądała reklamy podzielona przez 10
             Y=Y+fruits_dict[x]/9+10
@@ -106,7 +106,7 @@ for z in range(X):
     # Najważniejsze: losowane jest czy klientka kupiła jakikolwiek sok. Losowanie jest proporcjonalne do wcześniej zdefiniowanych zmiennych Y i N
     output.append(choices(["Y","N"], weights=[Y,N],k=1)[0])
 
-    # drukowane jest wynik, czy lista wszsytkich zmiennych. Nie ma nagłówków.
+    # drukowane jest wynik, czy lista wszystkich zmiennych. Nie ma nagłówków.
     output=map(lambda x: str(x),output)
     print(",".join(output))
 

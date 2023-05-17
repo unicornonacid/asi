@@ -9,7 +9,7 @@ services:
       context: .
       target: generator
     environment:
-      NOCASES: 10
+      NOCASES: 5000
       OUTPUT_FILE: /data/raw/first.csv
     volumes:
       - ./data:/data:rw
@@ -20,11 +20,21 @@ services:
       context: .
       target: cleaner
     environment:
-      FROM_FILE: /data/raw/first.csv
-      OUTPUT_FILE: /data/clean/first.csv
+      RAW: /data/raw/first.csv
+      CLEAN_FILE: /data/clean/first.csv
     volumes:
       - ./data:/data:rw
     depends_on:
       - baseimg
-
+  trainer:
+    build:
+      context: .
+      target: trainer
+    environment:
+      INPUT_FILE: /data/raw/first.csv
+      MODEL_OUT: /data/model/model.scops
+    volumes:
+      - ./data:/data:rw
+    depends_on:
+      - baseimg
 

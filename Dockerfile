@@ -29,3 +29,9 @@ COPY cleaner/cleaner.sh .
 CMD ["/app/cleaner.sh"]
 
 
+FROM base AS trainer
+
+COPY trainer/trainer.py .
+COPY trainer/trainer.sh .
+
+CMD ["/app/cleaner.sh"]
