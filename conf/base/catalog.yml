@@ -2,3 +2,10 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+generated_data:
+  type: pandas.CSVDataSet
+  filepath: data/01_raw/generated.csv
+
+clean_data:
+  type: pandas.CSVDataSet
+  filepath: data/03_primary/clean.csv
