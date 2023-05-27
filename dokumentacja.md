@@ -67,5 +67,5 @@ Wytrenowany model słuzy jako podstawa do stworzenia obrazu Dokerowego aplikacji
 #### Data drift
 Zmiana danych jest moniotorwana za pomocą biblioteki `Frouros` Jeżeli zmiany zostaną wykryte, następuję ponowne wytrenowanie modelu i jego deployment
 #### Monitoring środowiska
-Monitoring środowiska jest oparty o system do zbierania metryk Prometheus
+Monitoring środowiska jest oparty o system do zbierania metryk Prometheus i Grafana
 	
