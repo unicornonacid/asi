@@ -55,17 +55,17 @@ Jako model została wybrana regresja logistyczna w implementacji `LogisticRegres
 ### Architektura właściwa
 Jeżeli nie zostało opisane inaczej, cały pipeline opiera się o system **Kedro**, odpalony w **Dockerze**.
 #### Generowanie danych
-	Dane są pobierane z zewnętrzengo systemu za pomocą dostarczonego skryptu
+Dane są pobierane z zewnętrzengo systemu za pomocą dostarczonego skryptu
 #### Zapisanie danych w repozytorium
-	Dane są zapisywane w zewnętznym repozytorium opartym o **DVC**
+Dane są zapisywane w zewnętznym repozytorium opartym o **DVC**
 #### ETL
-	Dane są przekodowywane (**polars**) i sprawdzana jest ich poprawność (**Great Expectations**), następne zapisywane w repozytorium **DVC**
+Dane są przekodowywane (**polars**) i sprawdzana jest ich poprawność (**Great Expectations**), następne zapisywane w repozytorium **DVC**
 #### Trening
-	Model jest trenowany razem z doborem hiperparametrów za pomocą wbudowanych w bibliotekę scilearn procedurę `GridSearchCV`. Trening jest monitorowany za pomocą narzędzia `MLflow`. Wytrenowany model zapisywany jest do rejestru modeli udostępnionego przez `DVC`
+Model jest trenowany razem z doborem hiperparametrów za pomocą wbudowanych w bibliotekę scilearn procedurę `GridSearchCV`. Trening jest monitorowany za pomocą narzędzia `MLflow`. Wytrenowany model zapisywany jest do rejestru modeli udostępnionego przez `DVC`
 #### Operacjonalizacja
-	Wytrenowany model słuzy jako podstawa do stworzenia obrazu Dokerowego aplikacji webowej opartej o `Streamlit`, Aplikacja jest deployowana w tym samym miejscu co **Kedro**
+Wytrenowany model słuzy jako podstawa do stworzenia obrazu Dokerowego aplikacji webowej opartej o `Streamlit`, Aplikacja jest deployowana w tym samym miejscu co **Kedro**
 #### Data drift
-	Zmiana danych jest moniotorwana za pomocą biblioteki `Frouros` Jeżeli zmiany zostaną wykryte, następuję ponowne wytrenowanie modelu i jego deployment
+Zmiana danych jest moniotorwana za pomocą biblioteki `Frouros` Jeżeli zmiany zostaną wykryte, następuję ponowne wytrenowanie modelu i jego deployment
 #### Monitoring środowiska
-	Monitoring środowiska jest oparty o system do zbierania metryk Prometheus
+Monitoring środowiska jest oparty o system do zbierania metryk Prometheus
 	
