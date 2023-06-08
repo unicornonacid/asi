@@ -9,3 +9,7 @@ generated_data:
 clean_data:
   type: pandas.CSVDataSet
   filepath: data/03_primary/clean.csv
+
+regressor:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/regressor.pickle

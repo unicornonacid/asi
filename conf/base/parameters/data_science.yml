@@ -1,0 +1,30 @@
+model_options:
+  test_size: 0.3
+  random_state: 2137
+  features:
+    - Sex
+    - Age
+    - Apple
+    - Aronia
+    - Banana
+    - Bearberry
+    - Blackberry
+    - Blackcurrant
+    - Blueberry
+    - Cantaloupe
+    - Citron
+    - Clementine
+    - Coconut
+    - Guava
+    - Lime
+    - Lychee
+    - Mango
+    - Orange
+    - Peach
+    - Plum
+    - Quince
+    - Raspberry
+    - Redcurrant
+    - Sambucus
+    - Strawberries
+      

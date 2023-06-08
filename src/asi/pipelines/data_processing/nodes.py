@@ -2,8 +2,14 @@ import pandas as pd
 from typing import Dict, List, Any
 
 
-# TODO refactor
 def generate_data(parameters: Dict) -> pd.DataFrame:
+    """Generates data.
+
+    Args:
+        parameters: Configuration.
+    Returns:
+        Generated data.
+    """
     from mimesis import Generic
     from mimesis.locales import Locale
     from random import choices, sample, randrange
@@ -94,6 +100,13 @@ def generate_data(parameters: Dict) -> pd.DataFrame:
 
 
 def clean_data(data: pd.DataFrame) -> pd.DataFrame:
+    """Cleans data and returnes clean data.
+
+    Args:
+        data: Generated data.
+    Returns:
+        Clean data.
+    """
     # policzenie rekordów
     row_number = len(data.index)
 
