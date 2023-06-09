@@ -36,7 +36,7 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression
 
     Args:
         X_train: Training data of independent features.
-        y_train: Training data for price.
+        y_train: Training data for client.
 
     Returns:
         Trained model.
@@ -69,7 +69,7 @@ def evaluate_model(
     Args:
         regressor: Trained model.
         X_test: Testing data of independent features.
-        y_test: Testing data for price.
+        y_test: Testing data for client.
     """
     y_pred = regressor.predict(X_test)
     score = r2_score(y_test, y_pred)
