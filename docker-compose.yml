@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  kedro:
+    image: asi/kedro:dev
+    build:
+      context: kedro
+    volumes:
+      - ./kedro:/home/kedro_docker
+  streamlit:
+    image: asi/streamlit:dev
+    build:
+      context: streamlit
+    volumes:
+      - ./streamlit:/srv/streamlit
+      - ./kedro/data/06_models:/srv/streamlit/model
+    ports:
+      - '8501:8501'
+    networks:
+      - asi
+    depends_on:
+      - kedro
+
+networks:
+  asi:

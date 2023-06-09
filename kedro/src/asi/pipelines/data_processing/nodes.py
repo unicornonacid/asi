@@ -1,9 +1,16 @@
 import pandas as pd
 from typing import Dict, List, Any
+import logging
 
 
-# TODO refactor
 def generate_data(parameters: Dict) -> pd.DataFrame:
+    """Generates data.
+
+    Args:
+        parameters: Configuration.
+    Returns:
+        Generated data.
+    """
     from mimesis import Generic
     from mimesis.locales import Locale
     from random import choices, sample, randrange
@@ -43,7 +50,7 @@ def generate_data(parameters: Dict) -> pd.DataFrame:
     data = pd.DataFrame(columns=headers)
 
     for z in range(parameters["data_size"]):
-        # losoanie płci
+        # losowanie płci
         # wiek > 18 roku życia
         row: list[str | int] = [choices(["F", "M"], weights=[0.4, 0.6], k=1)[0], g.person.age(18)]
 
@@ -94,6 +101,13 @@ def generate_data(parameters: Dict) -> pd.DataFrame:
 
 
 def clean_data(data: pd.DataFrame) -> pd.DataFrame:
+    """Cleans data and returns clean data.
+
+    Args:
+        data: Generated data.
+    Returns:
+        Clean data.
+    """
     # policzenie rekordów
     row_number = len(data.index)
 
@@ -114,8 +128,11 @@ def clean_data(data: pd.DataFrame) -> pd.DataFrame:
     clean_number = len(data.index)
 
     # raport końcowy
-    print(f"""Przetworzono {row_number} rekordów.
-    Usunięto {row_number - clean_number}.
-    Docelowy plik ma {clean_number} rekordów""")
+    logger = logging.getLogger(__name__)
+    logger.info(
+        f"""Przetworzono {row_number} rekordów.
+        Usunięto {row_number - clean_number}.
+        Docelowy plik ma {clean_number} rekordów"""
+    )
 
     return data
