@@ -1,14 +1,17 @@
-.. asi documentation master file, created by sphinx-quickstart.
+.. ASI documentation master file, created by
+   sphinx-quickstart on Sat Jun 10 08:31:01 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to project asi's API docs!
-=============================================
+Welcome to ASI's documentation!
+===============================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+   :caption: Contents:
 
    modules
+
 
 
 Indices and tables
