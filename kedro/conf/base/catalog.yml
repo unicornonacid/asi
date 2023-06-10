@@ -5,11 +5,15 @@
 generated_data:
   type: pandas.CSVDataSet
   filepath: data/01_raw/generated.csv
+  versioned: True
 
 clean_data:
   type: pandas.CSVDataSet
   filepath: data/05_model_input/clean.csv
+  versioned: True
 
 regressor:
   type: pickle.PickleDataSet
   filepath: data/06_models/regressor.pickle
+  versioned: True
+

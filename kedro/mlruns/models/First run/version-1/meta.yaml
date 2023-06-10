@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1686378421778
+current_stage: None
+description: ''
+last_updated_timestamp: 1686378421778
+name: First run
+run_id: 6cab5508afc846e29a755f5af1b811d1
+run_link: ''
+source: file:///home/mefju/repos/asi/kedro/mlruns/0/6cab5508afc846e29a755f5af1b811d1/artifacts/best_estimator
+status: READY
+status_message: null
+user_id: null
+version: 1

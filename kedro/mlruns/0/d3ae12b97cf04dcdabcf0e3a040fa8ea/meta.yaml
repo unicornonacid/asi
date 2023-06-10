@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/d3ae12b97cf04dcdabcf0e3a040fa8ea/artifacts
+end_time: 1686378009896
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d3ae12b97cf04dcdabcf0e3a040fa8ea
+run_name: languid-hare-472
+run_uuid: d3ae12b97cf04dcdabcf0e3a040fa8ea
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686377939781
+status: 3
+tags: []
+user_id: root

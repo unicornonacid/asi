@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/fe199fab108f4633a353069cd0f9a470/artifacts
+end_time: 1686358993011
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fe199fab108f4633a353069cd0f9a470
+run_name: luxuriant-skunk-923
+run_uuid: fe199fab108f4633a353069cd0f9a470
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686358927693
+status: 3
+tags: []
+user_id: root

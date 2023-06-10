@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/5899d9c72a41431c87fa8769aac13814/artifacts
+end_time: 1686378651404
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5899d9c72a41431c87fa8769aac13814
+run_name: grandiose-skunk-233
+run_uuid: 5899d9c72a41431c87fa8769aac13814
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686378591415
+status: 3
+tags: []
+user_id: mefju

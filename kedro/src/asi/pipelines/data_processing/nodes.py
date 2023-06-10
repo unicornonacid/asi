@@ -86,6 +86,8 @@ def generate_data(parameters: Dict) -> pd.DataFrame:
         # Dla klientek wartoś Y obniża się o 15
         if row[0] == 'F':
             Y = Y - 15
+        else:
+            N= N +25
 
         # do zmiennej output dodawane są wartosci wygenerowanych reklam
         for x in sorted(fruits_dict.keys()):

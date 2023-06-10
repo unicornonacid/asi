@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/df1059b6d06a434eb3150412e2707177/artifacts
+end_time: 1686357953154
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: df1059b6d06a434eb3150412e2707177
+run_name: melodic-fish-112
+run_uuid: df1059b6d06a434eb3150412e2707177
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686357893080
+status: 3
+tags: []
+user_id: root

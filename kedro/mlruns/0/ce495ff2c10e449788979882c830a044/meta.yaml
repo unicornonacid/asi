@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/ce495ff2c10e449788979882c830a044/artifacts
+end_time: 1686379665676
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ce495ff2c10e449788979882c830a044
+run_name: stately-grub-366
+run_uuid: ce495ff2c10e449788979882c830a044
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686379610671
+status: 3
+tags: []
+user_id: mefju

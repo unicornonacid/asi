@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/df2a3e5e71e64f1e8a7406d047852dcc/artifacts
+end_time: 1686359322837
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: df2a3e5e71e64f1e8a7406d047852dcc
+run_name: dashing-calf-691
+run_uuid: df2a3e5e71e64f1e8a7406d047852dcc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686359256223
+status: 3
+tags: []
+user_id: root

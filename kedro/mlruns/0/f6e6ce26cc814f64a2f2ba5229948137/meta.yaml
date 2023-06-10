@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/f6e6ce26cc814f64a2f2ba5229948137/artifacts
+end_time: 1686378013914
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f6e6ce26cc814f64a2f2ba5229948137
+run_name: ambitious-hawk-251
+run_uuid: f6e6ce26cc814f64a2f2ba5229948137
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686378009903
+status: 3
+tags: []
+user_id: root

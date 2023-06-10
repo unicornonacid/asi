@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/46c451a1ba3d4e968d2243e149f70031/artifacts
+end_time: 1686377466431
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 46c451a1ba3d4e968d2243e149f70031
+run_name: vaunted-wasp-519
+run_uuid: 46c451a1ba3d4e968d2243e149f70031
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686377462549
+status: 3
+tags: []
+user_id: root

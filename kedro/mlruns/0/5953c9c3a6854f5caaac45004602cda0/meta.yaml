@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/5953c9c3a6854f5caaac45004602cda0/artifacts
+end_time: 1686378009661
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5953c9c3a6854f5caaac45004602cda0
+run_name: burly-carp-335
+run_uuid: 5953c9c3a6854f5caaac45004602cda0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686377939781
+status: 3
+tags: []
+user_id: root

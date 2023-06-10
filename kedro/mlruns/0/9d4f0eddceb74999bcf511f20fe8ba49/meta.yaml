@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/9d4f0eddceb74999bcf511f20fe8ba49/artifacts
+end_time: 1686378654930
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9d4f0eddceb74999bcf511f20fe8ba49
+run_name: tasteful-flea-694
+run_uuid: 9d4f0eddceb74999bcf511f20fe8ba49
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686378651584
+status: 3
+tags: []
+user_id: mefju

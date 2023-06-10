@@ -1,0 +1,9 @@
+digest: 682932a4
+name: dataset
+profile: '{"features_shape": [3000, 25], "features_size": 75000, "features_nbytes":
+  600000}'
+schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
+  {\"dtype\": \"float64\", \"shape\": [-1, 25]}}]", "targets": null}}'
+source: '{"tags": {"mlflow.user": "mefju", "mlflow.source.name": "/home/mefju/repos/asi/.venv/bin/kedro",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "2679b1eca65bbfc71e801e8ad2bf8f4bfe23e7d8"}}'
+source_type: code

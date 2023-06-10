@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/42d1b0acd9ef4b22826ee630adb15b5c/artifacts
+end_time: 1686379471112
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 42d1b0acd9ef4b22826ee630adb15b5c
+run_name: illustrious-fly-411
+run_uuid: 42d1b0acd9ef4b22826ee630adb15b5c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686379415799
+status: 3
+tags: []
+user_id: mefju

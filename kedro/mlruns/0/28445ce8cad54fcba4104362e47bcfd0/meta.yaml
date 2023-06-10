@@ -1,0 +1,15 @@
+artifact_uri: file:///home/mefju/repos/asi/kedro/mlruns/0/28445ce8cad54fcba4104362e47bcfd0/artifacts
+end_time: 1686377462347
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 28445ce8cad54fcba4104362e47bcfd0
+run_name: efficient-shrimp-507
+run_uuid: 28445ce8cad54fcba4104362e47bcfd0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686377401628
+status: 3
+tags: []
+user_id: root
