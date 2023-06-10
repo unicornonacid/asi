@@ -45,7 +45,6 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression
     mlflow.autolog()
     regressor = LogisticRegression()
 
-    # TODO refactor, causes errors, model has very low r2 score
     param_grid = [
         {'penalty': ['l1', 'l2', 'elasticnet', None],
          'C': np.logspace(-4, 4, 20),
@@ -55,8 +54,10 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression
     ]
     clf = GridSearchCV(regressor, param_grid=param_grid, cv=3, n_jobs=-1, verbose=0)
     clf.fit(X_train, y_train)
-    print("Tuned Hyperparameters :", clf.best_params_)
-    print("Accuracy :", clf.best_score_)
+
+    logger = logging.getLogger(__name__)
+    logger.info("Tuned Hyperparameters : %s" % clf.best_params_)
+    logger.info("Accuracy : %s" % clf.best_score_)
 
     regressor.fit(X_train, y_train)
 

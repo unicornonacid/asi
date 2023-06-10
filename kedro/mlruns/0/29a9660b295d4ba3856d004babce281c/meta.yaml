@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/29a9660b295d4ba3856d004babce281c/artifacts
+end_time: 1686380165988
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 29a9660b295d4ba3856d004babce281c
+run_name: bemused-shrew-269
+run_uuid: 29a9660b295d4ba3856d004babce281c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686380147351
+status: 4
+tags: []
+user_id: root

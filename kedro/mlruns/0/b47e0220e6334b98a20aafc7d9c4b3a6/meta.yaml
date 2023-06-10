@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/b47e0220e6334b98a20aafc7d9c4b3a6/artifacts
+end_time: 1686380166777
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: b47e0220e6334b98a20aafc7d9c4b3a6
+run_name: defiant-mink-683
+run_uuid: b47e0220e6334b98a20aafc7d9c4b3a6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686380165995
+status: 4
+tags: []
+user_id: root
