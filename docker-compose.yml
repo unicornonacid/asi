@@ -7,6 +7,15 @@ services:
       context: kedro
     volumes:
       - ./kedro:/home/kedro_docker
+  mlflow:
+    image: asi/kedro:dev
+    build:
+      context: kedro
+    volumes:
+      - ./kedro:/home/kedro_docker
+    command: mlflow ui -h 0.0.0.0 -p 5000
+    ports:
+      - '5000:5000'  
   streamlit:
     image: asi/streamlit:dev
     build:

@@ -1,6 +1,7 @@
 from typing import Dict, Tuple
 import pandas as pd
 import numpy as np
+import mlflow
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 from sklearn import preprocessing
@@ -41,20 +42,21 @@ def train_model(X_train: pd.DataFrame, y_train: pd.Series) -> LogisticRegression
     Returns:
         Trained model.
     """
+    mlflow.autolog()
     regressor = LogisticRegression()
 
     # TODO refactor, causes errors, model has very low r2 score
-    # param_grid = [
-    #     {'penalty': ['l1', 'l2', 'elasticnet', None],
-    #      'C': np.logspace(-4, 4, 20),
-    #      'solver': ['lbfgs', 'newton-cholesky', 'newton-cg', 'liblinear', 'sag', 'saga'],
-    #      'max_iter': [100, 1000, 2500, 5000]
-    #      }
-    # ]
-    # clf = GridSearchCV(regressor, param_grid=param_grid, cv=3, n_jobs=-1, verbose=0)
-    # clf.fit(X_train, y_train)
-    # print("Tuned Hyperparameters :", clf.best_params_)
-    # print("Accuracy :", clf.best_score_)
+    param_grid = [
+        {'penalty': ['l1', 'l2', 'elasticnet', None],
+         'C': np.logspace(-4, 4, 20),
+         'solver': ['lbfgs', 'newton-cholesky', 'newton-cg', 'liblinear', 'sag', 'saga'],
+         'max_iter': [100, 1000, 2500, 5000]
+         }
+    ]
+    clf = GridSearchCV(regressor, param_grid=param_grid, cv=3, n_jobs=-1, verbose=0)
+    clf.fit(X_train, y_train)
+    print("Tuned Hyperparameters :", clf.best_params_)
+    print("Accuracy :", clf.best_score_)
 
     regressor.fit(X_train, y_train)
 
