@@ -16,6 +16,8 @@ def generate_data():
         status_text.text("%i%% Complete" % perc)
         progress_bar.progress(perc)
         perc+=1
+        if perc>100:
+            perc=99
         time.sleep(0.05)
     progress_bar.progress(100)
     status_text.text("%i%% Complete" % 100)
