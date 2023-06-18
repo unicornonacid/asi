@@ -1,39 +1,49 @@
 version: '3'
-
 services:
-  kedro:
-    image: asi/kedro:dev
-    build:
-      context: kedro
-    volumes:
-      - ./kedro:/home/kedro_docker
-  mlflow:
-    image: asi/kedro:dev
-    build:
-      context: kedro
-    volumes:
-      - ./kedro:/home/kedro_docker
-    command: mlflow ui -h 0.0.0.0 -p 5000 --expose-prometheus metrics
+  controller:
+    image: baseimage:latest
+    command: sh -c "cd /app/web/; streamlit run ./strona_początkowa.py"
     ports:
-      - '5000:5000'  
-  streamlit:
-    image: asi/streamlit:dev
-    build:
-      context: streamlit
-    volumes:
-      - ./streamlit:/srv/streamlit
-      - ./kedro/data/06_models:/srv/streamlit/model
+    - 8501:8501
+  webapp:
+    image: baseimage:latest
+    environment:
+    - STREAMLIT_SERVER_PORT=4040 
+    command: sh -c "cd /app/kedro; streamlit run ./app.py"
     ports:
-      - '8501:8501'
-    networks:
-      - asi
-    depends_on:
-      - kedro
+    - 4040:4040
   prometheus:
-    image: prom/prometheus
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    image: prom/prometheus:latest
+    container_name: prometheus
     ports:
-      - '9090:9090'
-networks:
-  asi:
+    - 9090:9090
+    command:
+    - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+    - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+    - cadvisor
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    ports:
+    - 8080:8080
+    volumes:
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys:/sys:ro
+    - /var/lib/docker/:/var/lib/docker:ro
+    depends_on:
+    - redis
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+    - 6379:6379
+  mlflow:
+    image: baseimage:latest
+    command: sh -c "cd /app/kedro/ ; mlflow ui -h 0.0.0.0 -p 5000 --expose-prometheus metrics"
+    ports:
+    - 5000:5000
+
+
