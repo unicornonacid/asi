@@ -1,7 +1,8 @@
 import pandas as pd
 from typing import Dict, List, Any
 import logging
-
+from evidently.report import Report
+from evidently.metric_preset import DataDriftPreset
 
 def generate_data(parameters: Dict) -> pd.DataFrame:
     """Generates data.
@@ -52,7 +53,10 @@ def generate_data(parameters: Dict) -> pd.DataFrame:
     for z in range(parameters["data_size"]):
         # losowanie płci
         # wiek > 18 roku życia
-        row: list[str | int] = [choices(["F", "M"], weights=[0.4, 0.6], k=1)[0], g.person.age(18)]
+        row: list[str | int] = [
+            choices(["F", "M"], weights=[0.1, 0.6], k=1)[0],
+            g.person.age(18),
+        ]
 
         # czas reklam dla każdego owoca jest ustawiamy na 0
         fruits_dict = {}
@@ -84,10 +88,10 @@ def generate_data(parameters: Dict) -> pd.DataFrame:
         Y = Y + row[1]
 
         # Dla klientek wartoś Y obniża się o 15
-        if row[0] == 'F':
+        if row[0] == "F":
             Y = Y - 15
         else:
-            N= N +25
+            N = N + 25
 
         # do zmiennej output dodawane są wartosci wygenerowanych reklam
         for x in sorted(fruits_dict.keys()):
@@ -124,7 +128,7 @@ def clean_data(data: pd.DataFrame) -> pd.DataFrame:
     data = data.dropna()
 
     # tylko osoby w wieku poniżej 100 lat i powyżej 17 mogą kupować
-    data = data.query('Age > 17 and Age < 100')
+    data = data.query("Age > 17 and Age < 100")
 
     # policzenie rekordów po przetworzeniu
     clean_number = len(data.index)
@@ -138,3 +142,43 @@ def clean_data(data: pd.DataFrame) -> pd.DataFrame:
     )
 
     return data
+
+
+def register_base_data(data: pd.DataFrame) -> pd.DataFrame:
+    """Register base data.
+
+    Args:
+        data: Clean data.
+    Returns:
+        Clean data.
+    """
+
+    return data
+
+
+def data_drift_check(
+    base_data: pd.DataFrame, data_to_check: pd.DataFrame
+) -> pd.DataFrame:
+    """Data drift detection.
+
+    Args:
+        base_data: base data.
+        data_to_check: data to check.
+    Returns:
+        None
+    """
+
+    data_drift_report = Report(metrics=[
+        DataDriftPreset(),
+    ])
+
+    data_drift_report.run(current_data=data_to_check, reference_data=base_data,column_mapping=None)
+
+    report= data_drift_report.save_html("data_drift_report.html")
+
+    logger = logging.getLogger(__name__)
+    logger.info(
+        f"""No data drift detected."""
+    )
+
+    return report

@@ -12,8 +12,18 @@ clean_data:
   filepath: data/05_model_input/clean.csv
   versioned: True
 
+base_data:
+  type: pandas.CSVDataSet
+  filepath: data/05_model_input/base.csv
+  versioned: False
+
 regressor:
   type: pickle.PickleDataSet
   filepath: data/06_models/regressor.pickle
   versioned: True
+
+prod_model:
+  type: pickle.PickleDataSet
+  filepath: data/07_models/sklearn_model
+  versioned: False
 

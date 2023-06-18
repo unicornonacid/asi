@@ -1,7 +1,15 @@
 import numpy as np
 
-from frouros.detectors.data_drift import KSTest
+import pandas as pd
 
-detector = KSTest()
+from evidently.test_suite import TestSuite
+from evidently.test_preset import DataStabilityTestPreset
+from evidently.test_preset import DataQualityTestPreset
 
+
+data_stability = TestSuite(tests=[
+    DataStabilityTestPreset(),
+])
+
+basedata=pd.read("kedro/data
 
