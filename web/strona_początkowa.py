@@ -20,10 +20,9 @@ def main():
     # )
     st.sidebar.markdown(
 """## przydatne linki
-- [kedro](https://kedro.readthedocs.io/en/stable/)
-- [streamlit](https://docs.streamlit.io/en/stable/)
-- [promehteus](https://prometheus.io/)
-- [MLflow](https://mlflow.org/)
+- [modelowanie](https://localhost:4040/)
+- [promehteus](http://localhost:9090/)
+- [MLflow](https://localhost:8080/)
 """)
 
     st.markdown(
