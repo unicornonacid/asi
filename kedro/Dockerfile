@@ -1,15 +1,9 @@
-ARG BASE_IMAGE=python:3.10
+ARG BASE_IMAGE=python:3.9-slim
 FROM $BASE_IMAGE as runtime-environment
 
 # install project requirements
-RUN mkdir /app
-COPY requirements.txt /app/
-WORKDIR /app 
-RUN pip install --no-cache -r requirements.txt && rm -f /tmp/requirements.txt
-
-COPY web web
-COPY kedro kedro
-
+COPY src/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache -r /tmp/requirements.txt && rm -f /tmp/requirements.txt
 
 # add kedro user
 #ARG KEDRO_UID=999
@@ -17,15 +11,17 @@ COPY kedro kedro
 #RUN groupadd -f -g ${KEDRO_GID} kedro_group && \
 #useradd -m -d /home/kedro_docker -s /bin/bash -g ${KEDRO_GID} -u ${KEDRO_UID} kedro_docker
 
+WORKDIR /home/kedro_docker
 #USER kedro_docker
 
-#FROM runtime-environment
-
-
+FROM runtime-environment
 
 # copy the whole project except what is in .dockerignore
 #ARG KEDRO_UID=999
 #ARG KEDRO_GID=0
 #COPY --chown=${KEDRO_UID}:${KEDRO_GID} . .
 
+EXPOSE 8888
+
 # TODO run on demand?
+CMD ["kedro", "run"]
