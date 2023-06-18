@@ -5,13 +5,17 @@ services:
     command: sh -c "cd /app/web/; streamlit run ./strona_początkowa.py"
     ports:
     - 8501:8501
+    volumes: 
+      - shared-volume:/app/kedro/data/07_models/
   webapp:
     image: baseimage:latest
     environment:
     - STREAMLIT_SERVER_PORT=4040 
-    command: sh -c "cd /app/kedro; streamlit run ./app.py"
+    command: sh -c "cd /app/kedro; cp data/sklearn_model data/07_models/;streamlit run ./app.py"
     ports:
     - 4040:4040
+    volumes: 
+      - shared-volume:/app/kedro/data/07_models/
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -46,4 +50,6 @@ services:
     ports:
     - 5000:5000
 
+volumes:
+  shared-volume:
 
